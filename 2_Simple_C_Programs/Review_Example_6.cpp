@@ -9,7 +9,10 @@ int factorial(int n){
 int main(void){
     int n;
     cin>>n;
-    if(n<=0)cout<<"Error!"<<endl;
+    if(n<=0){
+        cout<<"Error!"<<endl;
+        return -1;
+    }
     cout<<factorial(n)<<endl;
     return 0;
 }
