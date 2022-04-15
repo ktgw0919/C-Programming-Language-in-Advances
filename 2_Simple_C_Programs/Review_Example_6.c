@@ -3,7 +3,10 @@
 int main(void){
     int n;
     scanf("%d",&n);
-    if(n<=0)printf("Error!");
+    if(n<=0){
+        printf("Error!");
+        return -1;
+    }
     int ans=1;
     for(int i=0;i<n;i++){
         ans=ans*(i+1);
