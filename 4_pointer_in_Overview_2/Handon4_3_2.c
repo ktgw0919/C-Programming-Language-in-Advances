@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 float max_3(float a, float b, float c){
-    if(a>b && a>c)return a;
-    if(b>c && b>a)return b;
-    if(c>a && c>b)return c;
+    if(a>=b && a>=c)return a;
+    if(b>=c && b>=a)return b;
+    if(c>=a && c>=b)return c;
 }
 
 int main(void){
