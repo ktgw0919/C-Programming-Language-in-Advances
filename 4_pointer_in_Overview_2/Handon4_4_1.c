@@ -8,7 +8,7 @@ int main(void){
     float a,b;
     scanf("%f%f",&a,&b);
 
-    printf("A*B = %f\n",mul_2_p(&a,&b));
+    printf("A*B = %f\n",mul_2(&a,&b));
 
     return 0;
 }
