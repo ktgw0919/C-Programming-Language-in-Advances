@@ -1,0 +1,81 @@
+#include<stdio.h>
+
+int main(void){
+    int a[109][109];
+    int b[109][109];
+
+    int n_x,n_y;
+
+    printf("Input number of columns in matrix A and B(Less than 100):");
+    scanf("%d",&n_x);
+    printf("Input number of rows in matrix A and B(Less than 100):");
+    scanf("%d",&n_y);
+
+    for(int i=0;i<n_y;i++){
+        printf("Input row %d of matrix A:",i+1);
+        for(int j=0;j<n_x;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    /*
+    for(int i=0;i<a_y;i++){
+        for(int j=0;j<a_x;j++){
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    */
+   
+//declare b_row and b_col
+   int b_row[109][109];
+   int b_col[109][109];
+   for(int i=0;i<n_y;i++){
+       for(int j=0;j<n_x;j++){
+           b_row[i][j]=a[i][j];
+           b_col[i][j]=a[i][j];
+       }
+   }
+
+//calc B_row
+   for(int i=0;i<n_y;i++){
+       for(int j=0;j<n_x;j++){
+           for(int k=0;k<n_x-1;k++){
+               int tmp=b_row[i][k];
+               if(b_row[i][k+1]<b_row[i][k]){
+                   b_row[i][k]=b_row[i][k+1];
+                   b_row[i][k+1]=tmp;
+               }
+           }
+       }
+   }
+    printf("\nB_row=\n");
+    for(int i=0;i<n_y;i++){
+        for(int j=0;j<n_x;j++){
+            printf(" %d",b_row[i][j]);
+        }
+        printf("\n");
+    }
+
+//calc B_col
+   for(int i=0;i<n_x;i++){
+       for(int j=0;j<n_y;j++){
+           for(int k=0;k<n_y-1;k++){
+               int tmp=b_col[k][i];
+               if(b_col[k+1][i]<b_col[k][i]){
+                   b_col[k][i]=b_col[k+1][i];
+                   b_col[k+1][i]=tmp;
+               }
+           }
+       }
+   }
+    printf("\nB_col=\n");
+    for(int i=0;i<n_y;i++){
+        for(int j=0;j<n_x;j++){
+            printf(" %d",b_col[i][j]);
+        }
+        printf("\n");
+    }
+
+    
+    return 0;
+}
