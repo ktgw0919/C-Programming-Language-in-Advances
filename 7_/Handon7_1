@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int *getMax3(int *a, int *b, int *c){
+    if(*a>=*b&&*a>=*c)return a;
+    if(*b>=*c&&*b>=*a)return b;
+    if(*c>=*a&&*c>=*b)return c;
+}
+
+int main(void){
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+
+    int *n=NULL;
+    n=getMax3(&a,&b,&c);
+
+    printf("Address:%p\n",n);
+    printf("Max value:%d\n",*n);
+
+    return 0;
+}
