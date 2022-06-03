@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+void array_mean(int a[],int n){
+    float sum=0;
+    for(int i=0;i<n;i++){
+        sum+=a[i];
+    }
+    printf("A_mean=%f",sum/n);
+}
+
+int main(void){
+    int n;
+    int a[10009];
+    printf("Input array size(less than 10000):");
+    scanf("%d",&n);
+
+    printf("Input array:");
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+
+    //sort_array(&a[0],n);
+
+    array_mean(&a[0],n);
+
+/*
+    for(int i=0;i<n;i++){
+        printf("%d ",a[i]);
+    }
+*/
+    
+    return 0;
+}
